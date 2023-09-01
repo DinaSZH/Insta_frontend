@@ -1,0 +1,54 @@
+.signup-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+}
+
+.signup-page .signup{
+    max-width: 400px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid rgb(219, 219, 219);
+    padding: 5px 27px;
+}
+
+.signup h3{ 
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(115, 115, 115);
+}
+
+.logo{
+    width: 175px;
+    height: 93px;
+}
+
+.facebook-button{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(0, 149, 246);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 7px 22px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signup .form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.signup .form span {
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(115, 115, 115);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+}
