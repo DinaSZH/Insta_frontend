@@ -1,0 +1,30 @@
+.profile-photo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 50px;
+}
+
+.profile-info{
+    width: 400px;
+}
+.profile-container{
+    margin: 50px 50px;
+} 
+
+.profile-info{
+    margin-left: 50px;
+}
+
+.username-info{
+    margin-bottom: 10px;
+}
+
+.Posts{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border-top:1px solid rgb(219, 219, 219)
+}

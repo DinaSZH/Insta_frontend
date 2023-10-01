@@ -6,3 +6,30 @@
     color: rgb(255, 255, 255);
     padding: 8px 0px;
 }
+
+.button-dark{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(0, 149, 246);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 7px 22px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.a-blue{
+    color: rgb(0, 149, 246);
+}
+a {
+    cursor: pointer;
+}
+
+.button-gray{
+    background-color: #CCD0D5;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: 14px;
+}

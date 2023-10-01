@@ -1,0 +1,52 @@
+.header{
+    width: 100%; 
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 80px;
+}
+
+.header-inner > div{
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.header-search{
+    border-radius: 3px;
+    border: 1px solid #f1f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+    padding: 5px 15px;
+}
+
+.header-search input{
+    border: none;
+    outline: none;
+}
+
+.insta-button{
+    display: flex;
+    gap: 10px;
+}
+
+.insta-button .item{
+    width: 20px;
+    height: 20px;
+}
+
+.insta-button:last-child a{
+    border-radius: 50%;
+}
