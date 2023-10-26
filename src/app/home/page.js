@@ -4,13 +4,9 @@ import { useState} from "react"
 import Header from '../../components/header'
 import profilePhoto from '../../app/images/profile_photo.jpeg'
 import Image from 'next/image'
-import Posts from '@/components/posts'
-import ModalUploadPhoto from "@/components/ModalUploadPhoto"
 import post from '../../app/images/profile_photo.jpeg'
 import post1 from '../../app/images/post1.jpeg'
 import post2 from '../../app/images/post2.jpeg'
-import ModalPost from "@/components/ModalPost"
-import ModalFollowers from "@/components/ModalFollowers"
 import Post from "../post/page"
 
 //Доработать home page
@@ -44,11 +40,46 @@ export default function Home() {
     <main>
       <Header onNewPhotoClick={openModal}/>
 
-          <div className="home-container container">
+            {/* <div className="container"> 
+                    <div className="stories-wrapper">
+                        <div className="story">
+                            <div className='profile-photo'>
+                                <Image src={profilePhoto}/>
+                            </div>
+                        </div>
+
+                        <div className="story">
+                            <div className='profile-photo'>
+                                <Image src={profilePhoto}/>
+                            </div>
+                        </div>
+
+                        <div className="story">
+                            <div className='profile-photo'>
+                                <Image src={profilePhoto}/>
+                            </div>
+                        </div>
+
+                        <div className="story">
+                            <div className='profile-photo'>
+                                <Image src={profilePhoto}/>
+                            </div>
+                        </div>
+
+                        <div className="story">
+                            <div className='profile-photo'>
+                                <Image src={profilePhoto}/>
+                            </div>
+                        </div>
+                    </div>
+            </div> */}
+           <div className="home-container container">
             <div className="home flex" >
                     <div class="left-col">
-                        <button class="btn-scroll" id="btn-scroll-left" onclick="scrollHorizontally(-1)"><i class="fas fa-chevron-left"></i></button>
+
+                        {/* <button class="btn-scroll" id="btn-scroll-left" onclick="scrollHorizontally(-1)"><i class="fas fa-chevron-left"></i></button>
                             <button class="btn-scroll2" id="btn-scroll-right" onclick="scrollHorizontally(1)"><i class="fas fa-chevron-right"></i></button>
+                        */}
                         <div class="status-wrapper">
                             
 
@@ -95,7 +126,7 @@ export default function Home() {
                         </div>
 
                         <div class="post">
-                            <div class="info">
+                            <div class="home-info">
                                 <div class="user">
                                     <div class="profile-pic"><Image src={post} alt="logo"/></div>
                                     <p class="username">modern_web_channel</p>
@@ -187,7 +218,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="suggestions"></div>
+            <div className="suggestions"></div> 
     </main>
   )
 }

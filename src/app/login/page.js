@@ -1,4 +1,5 @@
 
+'use client'
 import UserLogin from "@/components/login";
 
 

@@ -14,6 +14,7 @@ import ModalFollowers from "@/components/ModalFollowers"
 import Post from "../post/page"
 import { useSelector, useDispatch } from 'react-redux'
 import { logOut } from '@/app/store/slices/authSlice'
+import Link from "next/link"
 
 
 export default function Profile() {

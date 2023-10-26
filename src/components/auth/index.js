@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect} from "react"
 import { useSelector, useDispatch } from 'react-redux'
-import { authorize, signup } from "@/app/store/slices/authSlice"
+import { authorize, signup, setError } from "@/app/store/slices/authSlice"
 import instagram from "../../app/images/instagram.png"
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,25 +12,29 @@ export default function UserAuth() {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-    const signupUser = () => {
-        dispatch(signup(email, username, password))
-    }
-
+    
     const router = useRouter()
     const dispatch = useDispatch();
     const isAuth = useSelector((state) => state.auth.isAuth)
 
+    const error = useSelector ((state) => (state.auth.error))
     useEffect(() => {
-        if(isAuth){
-            router.push("/profile")
-        }
-    }, [isAuth])
+      return () => {
+        dispatch(setError(null))
+      }
+    }, [])
+
+    const signupUser = () => {
+        dispatch(signup({email, username, password }, router))
+    }
+
+
+
 
     return(
         <section className="signup-page">
             <div className="signup">
-                <Image className="logo" src={instagram}/>
+                <Image className="logo" src={instagram} alt="logo"/>
                 <h3>Sign up to see photos and videos from your friends.</h3>
                 <button className="button-dark">Log in with Facebook</button>
                 <h3>OR</h3>
@@ -44,7 +48,7 @@ export default function UserAuth() {
                     <span>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</span>
                   
                     {!isAuth && <Link href="/signup" >
-                     <button className="button" onClick={() => dispatch(authorize())}>Sign up</button>
+                     <button className="button-dark" onClick={signupUser}>Sign up</button>
                         </Link>}
                 </form>
             </div>

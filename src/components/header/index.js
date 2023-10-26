@@ -8,9 +8,32 @@ import newphoto from '../../app/images/newphoto.png'
 import like from '../../app/images/like.png'
 import profilePhoto from '../../app/images/profile_photo.jpeg'
 import Link from 'next/link'
+import { useSelector, useDispatch } from 'react-redux'
+import { logOut, authorize} from '@/app/store/slices/authSlice'
+import { useEffect } from 'react'
+import jwt_decode from 'jwt-decode'
+import { useRouter } from 'next/navigation'
 
 import Image from 'next/image'
 export default function Header({ onNewPhotoClick }) {
+    const dispatch = useDispatch();
+    const isAuth = useSelector((state) => state.auth.isAuth)
+    const currentUser = useSelector((state) => state.auth.currentUser)
+    const router = useRouter()
+
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(token) {
+            let decodedToken = jwt_decode(token)
+            if(decodedToken.exp * 1000 > Date.now()) {
+                dispatch(authorize({token}))
+            } else {
+                localStorage.removeItem("token")
+            }
+        }
+    }, [])
+
+
     return(
         <header className="header">
             <div className="container">
